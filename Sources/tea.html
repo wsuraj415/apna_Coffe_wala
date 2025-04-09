@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tea Menu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f5f3ea;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #5d3b0b;
+    }
+
+    .tea-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .tea-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .tea-img {
+      height: 180px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .btn-tea {
+      background-color: #7b4b1f;
+      color: white;
+      border: none;
+    }
+
+    .btn-tea:hover {
+      background-color: #5d3b0b;
+    }
+
+    select {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+    <nav
+    class="navbar navbar-expand-lg navbar-dark px-4"
+    style="background-color: #3e2723"
+  >
+    <!-- BRAND NAME -->
+    <a
+      class="navbar-brand fw-bold fs-3 me-4"
+      href="#"
+      style="
+        font-family: 'Georgia', serif;
+        letter-spacing: 1px;
+        transition: 0.3s;
+      "
+    >
+      <span style="color: #ffcc80"
+        >☕ Apna <span style="color: #ffffff">Coffee Wala</span></span
+      >
+    </a>
+
+    <!-- THIN WHITE LINE -->
+    <div
+      class="vr me-4"
+      style="height: 50px; border-left: 2px solid #ffffff"
+    ></div>
+
+    <!-- NAV TOGGLER -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <!-- CENTER BUTTONS -->
+      <ul class="navbar-nav mx-auto align-items-center">
+        <li class="nav-item mx-2">
+          <a class="btn btn-outline-light nav-btn" href="#orange">Menu</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="btn btn-outline-light nav-btn" href="#">Offers</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="btn btn-outline-light nav-btn" href="#">Rewards</a>
+        </li>
+      </ul>
+
+      <!-- SEARCH BAR (LEFT SIDE) -->
+      <form class="d-flex me-4" role="search" style="max-width: 300px">
+        <input
+          class="form-control rounded-pill"
+          type="search"
+          placeholder="Search coffee..."
+          aria-label="Search"
+        />
+      </form>
+
+      <!-- RIGHT SIDE BUTTONS -->
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item mx-1">
+          <a
+            class="btn btn-warning text-dark nav-btn"
+            href="/Sources/Sign-Up-Page.html"
+            target="_blank"
+          >
+            Sign Up</a
+          >
+        </li>
+        <li class="nav-item mx-1">
+          <a
+            class="btn btn-light text-dark nav-btn"
+            href="/Sources/login-page.html"
+            target="_blank"
+            >Login</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <h2>🍵 Our Tea Menu 🍵</h2>
+
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- 1 -->
+      <div class="col-md-3">
+        <div class="tea-card">
+          <img src="/Media/T1.jpg" alt="Masala Chai" class="tea-img" />
+          <div class="card-body">
+            <h5>Masala Chai</h5>
+            <p>Spiced tea with cardamom, ginger, and cloves.</p>
+            <select class="form-select">
+              <option>Small - ₹60</option>
+              <option>Medium - ₹80</option>
+              <option>Large - ₹100</option>
+            </select>
+            <button class="btn btn-tea w-100 mt-2">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="col-md-3">
+        <div class="tea-card">
+          <img src="/Media/T2.jpg" alt="Green Tea" class="tea-img" />
+          <div class="card-body">
+            <h5>Green Tea</h5>
+            <p>  Light, grassy flavor with soothing aroma.</p>
+            <select class="form-select">
+              <option>Small - ₹70</option>
+              <option>Medium - ₹90</option>
+              <option>Large - ₹110</option>
+            </select>
+            <button class="btn btn-tea w-100 mt-2">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="col-md-3">
+        <div class="tea-card">
+          <img src="/Media/T3.jpg" alt="Black Tea" class="tea-img" />
+          <div class="card-body">
+            <h5>Black Tea</h5>
+            <p>Strong and bold flavor with deep, rich aroma.</p>
+            <select class="form-select">
+              <option>Small - ₹50</option>
+              <option>Medium - ₹70</option>
+              <option>Large - ₹90</option>
+            </select>
+            <button class="btn btn-tea w-100 mt-2">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="col-md-3">
+        <div class="tea-card">
+          <img src="/Media/T4.jpg" alt="Tulsi Tea" class="tea-img" />
+          <div class="card-body">
+            <h5>Tulsi Tea</h5>
+            <p>Herbal tea with stress-relieving properties.</p>
+            <select class="form-select">
+              <option>Small - ₹65</option>
+              <option>Medium - ₹85</option>
+              <option>Large - ₹105</option>
+            </select>
+            <button class="btn btn-tea w-100 mt-2">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="col-md-3">
+        <div class="tea-card">
+          <img src="/Media/T5.jpg" alt="Lemon Tea" class="tea-img" />
+          <div class="card-body">
+            <h5>Lemon Tea</h5>
+            <p>Fresh black tea with a splash of lemon.</p>
+            <select class="form-select">
+              <option>Small - ₹55</option>
+              <option>Medium - ₹75</option>
+              <option>Large - ₹95</option>
+            </select>
+            <button class="btn btn-tea w-100 mt-2">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="col-md-3">
+        <div class="tea-card">
+          <img src="/Media/T7.jpg" alt="Kashmiri Kahwa" class="tea-img" />
+          <div class="card-body">
+            <h5>Elaichi Tea </h5>
+            <p> Aromatic tea with the sweet taste of cardamom.</p>
+            <select class="form-select">
+              <option>Small - ₹90</option>
+              <option>Medium - ₹110</option>
+              <option>Large - ₹130</option>
+            </select>
+            <button class="btn btn-tea w-100 mt-2">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="col-md-3">
+        <div class="tea-card">
+          <img src="/Media/T9.jpg" alt="Ginger Tea" class="tea-img" />
+          <div class="card-body">
+            <h5>Ginger Tea</h5>
+            <p>Strong taste, good for cold and digestion.</p>
+            <select class="form-select">
+              <option>Small - ₹60</option>
+              <option>Medium - ₹80</option>
+              <option>Large - ₹100</option>
+            </select>
+            <button class="btn btn-tea w-100 mt-2">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="col-md-3">
+        <div class="tea-card">
+          <img src="/Media/T8.jpg" alt="Darjeeling Tea" class="tea-img" />
+          <div class="card-body">
+            <h5>Special Tea</h5>
+            <p>Known as the champagne of teas, floral aroma.</p>
+            <select class="form-select">
+              <option>Small - ₹95</option>
+              <option>Medium - ₹115</option>
+              <option>Large - ₹135</option>
+            </select>
+            <button class="btn btn-tea w-100 mt-2">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

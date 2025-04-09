@@ -1,0 +1,110 @@
+.text-gradient {
+  color: #8B4513;
+  }
+
+  .text-shadow {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  }
+ 
+  /* Background Image */
+.bg-image {
+    background: url('/Media/vecteezy_the-side-angle-view-of-a-cup-of-coffee-on-the-table-with_23010432.jpg') no-repeat center center/cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+
+.text-cream {
+    font-size: 4rem;
+    color: #fff5e1; 
+    text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7); /
+}
+
+
+.hero-content {
+    position: absolute;
+    left: 4%;
+    top: 40%; 
+
+}
+#apna{
+    font-size: 5rem;
+
+}
+
+.bg-image {
+    margin-bottom: 8rem; /* Adjust as needed */
+}
+
+/* Button Coffee Theme */
+.btn-coffee {
+    background-color: #8B4513; /* Coffee Brown */
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-coffee:hover {
+    background-color: #D2B48C; /* Creamy White */
+    color: #000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Card Styling */
+
+  /* Menu Updated  */
+
+
+  #orange {
+    background-color: #fff3e0;
+    padding: 30px;
+    border-radius: 2px;
+    width: 98%;
+  }
+
+  .menu-heading {
+    font-size: 36px;
+    font-weight: bold;
+    color: #d35400;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .filter-section {
+    margin-bottom: 30px;
+  }
+
+  .card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 12px;
+    background-color: #fef9e7;
+    height: 450px; /* Updated height */
+    border: 2px solid black;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .card img {
+    height: 300px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  .btn-food {
+    background-color: #e67e22;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    width: 100%;
+    transition: background-color 0.3s;
+  }
+
+  .btn-food:hover {
+    background-color: #d35400;
+  }

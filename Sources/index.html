@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Apna Cafe</title>
+    <link rel="shortcut icon" href="/Media/coffee.png" type="image/x-icon" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="Style.css" />
+
+    <!-- Bootstrap  -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      #orange {
+        background-color: #fff3e0;
+        padding: 30px;
+        border-radius: 2px;
+        width: 98%;
+      }
+
+      .menu-heading {
+        font-size: 36px;
+        font-weight: bold;
+        color: #d35400;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .filter-section {
+        margin-bottom: 30px;
+      }
+
+      .card {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        border-radius: 12px;
+        background-color: #fef9e7;
+        height: 450px; /* Updated height */
+        border: 2px solid black;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .card img {
+        height: 300px;
+        object-fit: cover;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+      }
+
+      .btn-food {
+        background-color: #e67e22;
+        border: none;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 8px;
+        width: 100%;
+        transition: background-color 0.3s;
+      }
+
+      .btn-food:hover {
+        background-color: #d35400;
+      }
+      .quick-options .btn {
+        margin: 5px;
+        height: 50px;
+        width: 100px;
+        padding: 8px 15px;
+        font-weight: bold;
+        color: white;
+        background-color: #f39c12;
+        transition: background-color 0.3s;
+      }
+
+      .quick-options .btn:hover {
+        background-color: #e67e22;
+      }
+      .ftchange {
+        font-size: 1.1rem;
+      }
+
+      footer {
+        background: linear-gradient(to right, #3e2723, #5d4037);
+        color: #ffdab9;
+        padding: 50px 0;
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+      }
+
+      /* Section Titles */
+      footer h5 {
+        color: #ffcc80;
+        font-size: 22px; /* Increased Font Size */
+        font-weight: bold;
+        margin-bottom: 15px; /* Added Space Below */
+      }
+
+      /* Footer Links */
+      .footer-link {
+        color: #f5deb3; /* White Creamy Color */
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        transition: all 0.3s ease-in-out;
+        display: inline-block;
+        padding: 5px 0;
+      }
+
+      .footer-link:hover {
+        color: #ffd700; /* Golden Glow */
+        text-shadow: 0px 0px 8px #ffd700;
+        transform: scale(1.1);
+      }
+
+      /* Social Media Icons */
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      .social-link {
+        color: #ffdab9;
+        font-size: 24px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .social-link:hover {
+        color: #ffd700; /* Golden Glow */
+        transform: scale(1.2);
+      }
+
+      /* Copyright Text Hover Effect */
+      .copyright-text {
+        color: #e3dac9;
+        font-size: 14px;
+        transition: all 0.4s ease-in-out;
+      }
+
+      .copyright-text:hover {
+        font-size: 16px;
+        transform: scale(1.1);
+        color: #ffd700;
+        text-shadow: 0px 0px 8px #ffd700;
+      }
+      /* Navbar  */
+      .navbar-brand:hover {
+        transform: scale(1.05);
+        text-shadow: 2px 2px 8px #000;
+      }
+
+      .nav-btn {
+        transition: all 0.3s ease;
+      }
+
+      .nav-btn:hover {
+        background-color: #6d4c41 !important;
+        color: #fff !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      .vr {
+        opacity: 0.3;
+      }
+
+      /* Hero section */
+
+      .carousel-item img {
+        object-fit: cover;
+      }
+
+      /* Hover glow on arrows */
+      .custom-btn:hover span {
+        filter: brightness(1.2);
+      }
+
+      /* Indicator (dots) style */
+      .carousel-indicators button {
+        background-color: white;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        opacity: 0.7;
+      }
+
+      .carousel-indicators .active {
+        background-color: #ffc107;
+        opacity: 1;
+      }
+
+      /* CTA Button styling and hover animation */
+      .explore-btn {
+        transition: 0.3s ease;
+        border-radius: 30px;
+      }
+
+      .explore-btn:hover {
+        background-color: #ff9800;
+        color: #fff;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark px-4"
+      style="background-color: #3e2723"
+    >
+      <!-- BRAND NAME -->
+      <a
+        class="navbar-brand fw-bold fs-3 me-4"
+        href="#"
+        style="
+          font-family: 'Georgia', serif;
+          letter-spacing: 1px;
+          transition: 0.3s;
+        "
+      >
+        <span style="color: #ffcc80"
+          >☕ Apna <span style="color: #ffffff">Coffee Wala</span></span
+        >
+      </a>
+
+      <!-- THIN WHITE LINE -->
+      <div
+        class="vr me-4"
+        style="height: 50px; border-left: 2px solid #ffffff"
+      ></div>
+
+      <!-- NAV TOGGLER -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarContent"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <!-- CENTER BUTTONS -->
+        <ul class="navbar-nav mx-auto align-items-center">
+          <li class="nav-item mx-2">
+            <a class="btn btn-outline-light nav-btn" href="#orange">Menu</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="btn btn-outline-light nav-btn" href="#">Offers</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="btn btn-outline-light nav-btn" href="#">Rewards</a>
+          </li>
+        </ul>
+
+        <!-- SEARCH BAR (LEFT SIDE) -->
+        <form class="d-flex me-4" role="search" style="max-width: 300px">
+          <input
+            class="form-control rounded-pill"
+            type="search"
+            placeholder="Search coffee..."
+            aria-label="Search"
+          />
+        </form>
+
+        <!-- RIGHT SIDE BUTTONS -->
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item mx-1">
+            <a
+              class="btn btn-warning text-dark nav-btn"
+              href="/Sources/Sign-Up-Page.html"
+              target="_blank"
+            >
+              Sign Up</a
+            >
+          </li>
+          <li class="nav-item mx-1">
+            <a
+              class="btn btn-light text-dark nav-btn"
+              href="/Sources/spinner.html"
+              >Login</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+
+    <section
+      class="container-fluid p-0 position-relative"
+      style="height: 750px; overflow: hidden"
+    >
+      <div
+        id="heroCarousel"
+        class="carousel slide h-100"
+        data-bs-ride="carousel"
+      >
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="0"
+            class="active"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="2"
+          ></button>
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner h-100">
+          <div class="carousel-item active h-100">
+            <img
+              src="/Media/bg-3.jpg"
+              class="d-block w-100 h-100 object-fit-cover"
+              alt="Slide 1"
+            />
+          </div>
+          <div class="carousel-item h-100">
+            <img
+              src="/Media/bg-5.jpeg"
+              class="d-block w-100 h-100 object-fit-cover"
+              alt="Slide 2"
+            />
+          </div>
+          <div class="carousel-item h-100">
+            <img
+              src="/Media/cold coffee.jpg"
+              class="d-block w-100 h-100 object-fit-cover"
+              alt="Slide 3"
+            />
+          </div>
+        </div>
+
+        <!-- Arrows -->
+        <button
+          class="carousel-control-prev custom-btn"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button
+          class="carousel-control-next custom-btn"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+
+        <!-- Center content  -->
+        <div
+          class="position-absolute top-50 start-50 translate-middle text-center"
+        >
+          <h1 class="text-white fw-bold display-5">
+            ☕ Welcome to <span style="color: #ffc107">Apna Coffee Wala</span>
+          </h1>
+          <a href="#orange">
+            <button class="btn btn-warning mt-3 px-4 py-2 fw-bold explore-btn">
+              Explore Menu
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us  -->
+    <section class="container my-5">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <h2 class="fw-bold text-gradient text-shadow mb-4">About Us</h2>
+          <p class="text-muted ftchange">
+            Welcome to Apna Coffee Wala, where every sip is a story, and every
+            bite feels like home. We believe that coffee is more than just a
+            drink its an experience, a moment of joy, and a reason to pause in
+            the midst of a busy day.
+          </p>
+          <p class="text-muted ftchange">
+            At Apna Coffee Wala, we serve hot coffee, cold coffee, iced tea, hot
+            tea, sandwiches, French fries, and a variety of delicious snacks,
+            all made with love and the finest ingredients. And, of course, don't
+            forget to try our Apna Coffee Wala Special, a signature treat
+            crafted just for you!
+          </p>
+          <p class="text-muted ftchange">
+            <strong
+              >- Sip, smile, repeat - because every coffee tells a
+              story.</strong
+            >
+          </p>
+          <a
+            href="#"
+            class="btn btn-coffee btn-lg rounded-pill mt-3 px-4 shadow"
+            >See Menu</a
+          >
+        </div>
+
+        <!-- Right Image (Smaller Width) -->
+        <div class="col-lg-5 text-center">
+          <img
+            src="/Media/barista-6197867_1280.jpg"
+            alt="Coffee Cup"
+            class="img-fluid rounded shadow-lg w-75"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Add Space Below About Section -->
+    <div class="my-5"></div>
+
+    <!-- Menu Section -->
+    <div class="mt-4 mx-auto" id="orange">
+      <div class="menu-heading">Our Delicious Menu</div>
+
+      <!-- Filter, Quick Options, and Search -->
+      <div
+        class="filter-section d-flex justify-content-between align-items-center"
+      >
+        <select class="form-control w-25">
+          <option>Filter by Category</option>
+          <option>Beverages</option>
+          <option>Snacks</option>
+          <option>Fast Food</option>
+          <option>Desserts</option>
+        </select>
+
+        <div class="quick-options text-center">
+          <button class="btn">Coffee</button>
+          <button class="btn">Tea</button>
+          <button class="btn">Sandwich</button>
+          <button class="btn">Snacks</button>
+        </div>
+
+        <input
+          type="text"
+          class="form-control w-25"
+          placeholder="Search products..."
+        />
+      </div>
+
+      <div class="row g-4 mt-4">
+        <!-- Card 1: Hot Coffee -->
+        <div class="col-md-4">
+          <div class="card shadow-lg border-0">
+            <img
+              src="/Media/ coffee 1.jpg"
+              class="card-img-top"
+              alt="Hot Coffee"
+            />
+            <div class="card-body text-center">
+              <h5 class="card-title">Hot Coffee</h5>
+              <p class="card-text">
+                Rich, aromatic, and freshly brewed coffee.
+              </p>
+            
+              <a
+                href="/Sources/Coffee.html "
+                style="color: black; text-decoration: none"
+              >
+                <button class="btn btn-food">See More</button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Cold Coffee -->
+        <div class="col-md-4">
+          <div class="card shadow-sm border-0">
+            <img
+              src="/Media/cold coffee.jpg"
+              class="card-img-top cover"
+              alt="Cold Coffee"
+            />
+            <div class="card-body text-center">
+              <h5 class="card-title">Cold Coffee</h5>
+              <p class="card-text">Chilled and refreshing coffee with cream.</p>
+              <button class="btn btn-food">See More</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Iced Tea -->
+        <div class="col-md-4">
+          <div class="card shadow-sm border-0">
+            <img
+              src="/Media/ice tea 1234.jpg"
+              class="card-img-top"
+              alt="Iced Tea"
+            />
+            <div class="card-body text-center">
+              <h5 class="card-title">Iced Tea</h5>
+              <p class="card-text">Cool and refreshing flavored iced tea.</p>
+              <button class="btn btn-food">See More</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Hot Tea -->
+        <div class="col-md-4">
+          <div class="card shadow-sm border-0">
+            <img src="/Media/Hot Tea.jpeg" class="card-img-top" alt="Hot Tea" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Hot Tea</h5>
+              <p class="card-text">Freshly brewed tea with spices.</p>
+
+              <a
+                href="/Sources/tea.html "
+                style="color: black; text-decoration: none"
+              >
+                <button class="btn btn-food">See More</button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Sandwich -->
+        <div class="col-md-4">
+          <div class="card shadow-sm border-0">
+            <img
+              src="/Media/Sandwhich.jpeg"
+              class="card-img-top"
+              alt="Sandwich"
+            />
+            <div class="card-body text-center">
+              <h5 class="card-title">Sandwich</h5>
+              <p class="card-text">Tasty and fresh veggie sandwich.</p>
+              <button class="btn btn-food">See More</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: French Fries -->
+        <div class="col-md-4">
+          <div class="card shadow-sm border-0">
+            <img
+              src="/Media/fries.jpeg"
+              class="card-img-top"
+              alt="French Fries"
+            />
+            <div class="card-body text-center">
+              <h5 class="card-title">French Fries</h5>
+              <p class="card-text">Crispy golden potato fries.</p>
+              <button class="btn btn-food">See More</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7: Snacks -->
+        <div class="col-md-4">
+          <div class="card shadow-sm border-0">
+            <img src="/Media/snacks.jpg" class="card-img-top" alt="Snacks" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Snacks</h5>
+              <p class="card-text">
+                Delicious and quick bites to satisfy hunger.
+              </p>
+              <button class="btn btn-food">See More</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8: Apna Coffee Wala Special -->
+        <div class="col-md-4">
+          <div class="card shadow-sm border-0">
+            <img
+              src="/Media/speciak.jpg"
+              class="card-img-top"
+              alt="Apna Coffee Wala Special"
+            />
+            <div class="card-body text-center">
+              <h5 class="card-title">Apna Coffee Wala Special</h5>
+              <p class="card-text">Exclusive blend of flavors, just for you!</p>
+              <button class="btn btn-food">See More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <!-- About Us -->
+          <div class="col-md-3 mb-4">
+            <h5>☕ About Us</h5>
+            <p style="color: #e3dac9">
+              Step into a world of warmth and aroma! Apna Coffee Wala serves
+              freshly brewed coffee, delicious snacks, and cozy vibes to make
+              your day special.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-3 mb-4">
+            <h5>🔗 Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="footer-link">🏡 Home</a></li>
+              <li><a href="#" class="footer-link">🍽 Menu</a></li>
+              <li><a href="#" class="footer-link">📖 About</a></li>
+              <li><a href="#" class="footer-link">📞 Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Us -->
+          <div class="col-md-3 mb-4">
+            <h5>📍 Contact Us</h5>
+            <p style="color: #e3dac9">
+              📍 <b>BH1 Food Court, Lovely Professional University</b><br />
+              📞
+              <a href="tel:+919876543210" class="footer-link">+91 98765 43210</a
+              ><br />
+              ✉️
+              <a href="mailto:apnacoffee@example.com" class="footer-link"
+                >apnacoffee@example.com</a
+              >
+            </p>
+          </div>
+
+          <!-- Social Media -->
+          <div class="col-md-3 mb-4">
+            <h5>📲 Follow Us</h5>
+            <div class="social-icons">
+              <a href="#" class="social-link">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="#" class="social-link">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" class="social-link">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <a href="#" class="social-link">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Divider Line -->
+        <hr
+          style="border-top: 1px solid #ffcc80; width: 80%; margin: 20px auto"
+        />
+
+        <!-- Footer Bottom -->
+        <p class="copyright-text">
+          © 2025 Apna Coffee Wala. All Rights Reserved. ☕ Made with ❤️ for
+          coffee lovers!
+        </p>
+      </div>
+    </footer>
+
+    <!-- --------------    JavaScript      ---------------- -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
